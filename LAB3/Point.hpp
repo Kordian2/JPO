@@ -20,8 +20,8 @@ public:
     int getY() const {
         return m_y;
     }
-    void Display(void){
-        std::cout<<"Your Point (x,y) is: ("<<getX()<<", "<<getY()<<")"<<std::endl;
+    void display(void){
+        std::cout<<"Your Point (x,y) is: ("<<getX()<<","<<getY()<<")"<<std::endl;
     }     
 
 };
