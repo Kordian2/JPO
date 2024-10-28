@@ -1,6 +1,4 @@
 #include <iostream>
-
-int main(){
 class Student {
 public:
     std::string name;
@@ -27,6 +25,8 @@ public:
 private:
     std::string m_faculty;
 };
+int main(){
+
 
 Student student1; // default constructor
 student1.name = "Jakub";
