@@ -23,10 +23,10 @@ public:
     void setRadius(int r){
         *radius = r;
     }
-    Point getPoint(void){
+    Point getPoint(void) const{
         return m_center;
     }
-    double getRadius(){
+    double getRadius() const{
         return *radius;
     }
     double area(void){
