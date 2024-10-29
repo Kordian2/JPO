@@ -18,12 +18,19 @@ public:
     virtual void description() const = 0;
 
     void printCentre() const {
-        std::cout << "My centre is (" << /* */ << ", " << /* TODO get the y value */ << ")" << std::endl;
+        std::cout << "My centre is (" << m_centre.getX() << ", " << m_centre.getY() << ")" << std::endl;
     }
 
     void introduce() const {
         std::cout << "I'm a " << m_name << std::endl;
     }
 
-    /* TODO create a setter and getter for centre */
+    
+    Point getCentre(void) const{
+        return m_centre;
+    }
+    void setCentre(int x,int y){
+        m_centre.setX(x);
+        m_centre.setY(y);
+    }
 };
