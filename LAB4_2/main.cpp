@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include /* TODO include proper file (one) */
-#include /* TODO include proper file (one) */
+#include "Square.hpp" /* TODO include proper file (one) */
+#include  "Rectangle.hpp"/* TODO include proper file (one) */
 
 int main() {
     Rectangle rectangle(4, 5, Point(12, 14));

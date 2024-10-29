@@ -17,10 +17,11 @@ protected:
 public:
     // parametrized constructor
     Rectangle(double a, double b, const Point &p) : m_a(a),m_b(b),Figure(p,"rec"){
+            
         }/* TODO finish this constructor */
    
     /* TODO override the area() function properly */
-    double area(void){
+    double area(void) const override{
         return m_a * m_b;
     }
     /* TODO create proper setters and getters for for sides */

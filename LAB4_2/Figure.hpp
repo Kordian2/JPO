@@ -29,8 +29,7 @@ public:
     Point getCentre(void) const{
         return m_centre;
     }
-    void setCentre(int x,int y){
-        m_centre.setX(x);
-        m_centre.setY(y);
+    void setCentre(Point p){
+        m_centre = p;
     }
 };

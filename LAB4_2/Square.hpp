@@ -6,7 +6,7 @@
 class Square : public Rectangle{ /*napewno public??*/
 public:
     // parametrized constructor
-    Square(double a, const Point &p) : Rectangle(a,a,p,"square"){
-        
+    Square(double a, const Point &p) : Rectangle(a,a,p){
+
     } /* TODO finish this constructor */
 };
