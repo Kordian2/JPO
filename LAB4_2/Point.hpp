@@ -17,9 +17,9 @@ public:
         return m_y;
     }
     void setX(int value) {
-       /* TODO set value properly */
+       m_x = value;
     }
     void setY(int value) {
-       /* TODO set value properly */
+       m_y = value;
     }
 };

@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include /* TODO include proper file (only one) */
+#include "Point.hpp"
 
 class Figure {
 private:
@@ -10,13 +10,15 @@ private:
     std::string m_name;
 public:
     // parametrized constructor
-    Figure(const Point &p, std::string name) : /* TODO finish this constructor */
+    Figure(const Point &p, std::string name) : m_name(name),m_centre(p){
+
+    }
 
     virtual double area() const = 0;
     virtual void description() const = 0;
 
     void printCentre() const {
-        std::cout << "My centre is (" << /* TODO get the x value */ << ", " << /* TODO get the y value */ << ")" << std::endl;
+        std::cout << "My centre is (" << /* */ << ", " << /* TODO get the y value */ << ")" << std::endl;
     }
 
     void introduce() const {
