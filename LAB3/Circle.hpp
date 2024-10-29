@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include "Point.hpp"
+#include <math.h>
+#include <cmath>
 class Circle{
 private:
     double *radius;
@@ -10,12 +12,25 @@ public:
         radius = new double;
         *radius = r;
     }
-    int setPoint(int x, int y){
+    ~Circle(){
+        delete radius;
+        std::cout<<"Destructor is called"<<std::endl;
+    };
+    void setPoint(int x, int y){
         m_center.setX(x);
         m_center.setY(y);
     }
-    int setRadius(int r){
+    void setRadius(int r){
         *radius = r;
+    }
+    Point getPoint(void){
+        return m_center;
+    }
+    double getRadius(){
+        return *radius;
+    }
+    double area(void){
+        return M_PI**radius**radius;
     }
 
 };
