@@ -1,9 +1,12 @@
 #pragma once
 
-#include /* TODO include proper file (only one) */
+#include "Rectangle.hpp"
 
 /* TODO define Square class inheriting from the Rectangle class */
+class Square : public Rectangle{ /*napewno public??*/
 public:
     // parametrized constructor
-    Square(double a, const Point &p) : /* TODO finish this constructor */
+    Square(double a, const Point &p) : Rectangle(a,a,p,"square"){
+        
+    } /* TODO finish this constructor */
 };
