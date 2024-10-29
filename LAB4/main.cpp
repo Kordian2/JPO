@@ -18,12 +18,25 @@ class Cat : public Animal{
         std::cout<<"Meow!"<<std::endl;
     }
 };
-
+Animal* chooseAnimal(int number) {
+    if (number%2 == 0) {
+        return new Dog();
+    } else {
+        return new Cat();
+    }
+}
 int main(){
-    Dog dog;
-    Cat cat;
-    Animal animal;
-    dog.makeSound();
-    cat.makeSound();
-    animal.makeSound();
+    std::cout << "Enter a number: ";
+    int x{};
+    std::cin >> x;
+
+    Animal *animal = chooseAnimal(x);
+    animal->makeSound();
+
+    Dog* dog = new Dog;
+    Cat* cat = new Cat;
+    
+    dog->makeSound();
+    cat->makeSound();
+    
 }
