@@ -10,7 +10,7 @@ private:
 
 protected:
     // parametrized constructor (why this one is protected?)
-    Rectangle(double a, double b, const Point &p, std::string name): m_a(a), m_b(b), Figure(p,"recp"){
+    Rectangle(double a, double b, const Point &p, std::string name): m_a(a), m_b(b), Figure(p,name){
 
     } /* TODO finish this constructor */
 
