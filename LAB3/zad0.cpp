@@ -31,6 +31,7 @@ int main(){
 Student student1; // default constructor
 student1.name = "Jakub";
 student1.age = 25;
+
 student1.introduce();
 
 Student student2("Maciej", 22, "EiT"); // parameterized constructor

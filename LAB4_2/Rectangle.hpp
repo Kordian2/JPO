@@ -32,10 +32,14 @@ public:
         return m_b;
     }
     void setA(int a){
-        m_a = a;
+	if(a>0){
+        	m_a = a;
+	}
     }
     void setB(int b){
-        m_b = b;
+	if(b>0){
+        	m_b = b;
+	}
     }
     void description() const override {
         std::cout << "I have sides of length " << m_a << " and " << m_b << std::endl;

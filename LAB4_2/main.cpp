@@ -2,7 +2,7 @@
 
 #include "Square.hpp" /* TODO include proper file (one) */
 #include  "Rectangle.hpp"/* TODO include proper file (one) */
-
+#include "Circle.hpp"
 int main() {
     Rectangle rectangle(4, 5, Point(12, 14));
     rectangle.introduce();
@@ -22,5 +22,9 @@ int main() {
     rectangle2.description();
     std::cout << "Area of rectangle is: " << rectangle.area() << std::endl;
 
+    Circle circle1(4.2, Point(1, 5));
+    circle1.introduce();
+    circle1.description();
+    std::cout<<"Area of circle is: " << circle1.area() << std::endl;
     return 0;
 }

@@ -21,7 +21,9 @@ public:
         m_center.setY(y);
     }
     void setRadius(int r){
-        *radius = r;
+	if(r > 0){
+        	*radius = r;
+	}
     }
     Point getPoint(void) const{
         return m_center;

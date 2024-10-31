@@ -5,15 +5,24 @@ public:
     virtual void makeSound(void){
         std::cout<<"Sound"<<std::endl;
     }
+    virtual ~Animal(){
+        std::cout<<"Animal Destructor"<<std::endl;
+    }
 };
 class Dog : public Animal{
-    public:
+public:
     void makeSound() override {
         std::cout<<"Woof!"<<std::endl;
     }
+    ~Dog(){
+        std::cout<<"Dog Destructor"<<std::endl;
+    }
 };
 class Cat : public Animal{
-    public:
+public:
+    ~Cat(){
+        std::cout<<"Cat Destructor"<<std::endl;
+    }
     void makeSound() override {
         std::cout<<"Meow!"<<std::endl;
     }
@@ -32,11 +41,7 @@ int main(){
 
     Animal *animal = chooseAnimal(x);
     animal->makeSound();
+    delete animal;
+    
 
-    Dog* dog = new Dog;
-    Cat* cat = new Cat;
-    
-    dog->makeSound();
-    cat->makeSound();
-    
 }

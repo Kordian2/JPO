@@ -20,8 +20,9 @@ public:
     void setName(std::string n) {
         if(n.empty()){
 		std::cout<<"Your string is empty"<<std::endl;
-	    }else{
-            m_name = n;
+	}else{
+
+                m_name = n;
         }
     }
     std::string getName() const {
