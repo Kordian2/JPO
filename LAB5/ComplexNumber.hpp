@@ -60,5 +60,9 @@ public:
         m_real = other.m_real;
         m_imag = other.m_imag;
     }
+    friend std::ostream& operator<<(std::ostream& os, const ComplexNumber& c) {
+        os<<c.m_real<<(c.m_imag >= 0 ? "+" : "-")<<std::abs(c.m_imag)<<"i";
+        return os;
+    }
 
 };
