@@ -21,17 +21,31 @@ public:
     ComplexNumber operator+(const ComplexNumber& other) const{
         return ComplexNumber(m_real + other.m_real,m_imag + other.m_imag);
     }
+    ComplexNumber operator+(const double r) const{
+        return ComplexNumber(m_real + r, m_imag);
+    }
     ComplexNumber& operator+=(const ComplexNumber& other){
         m_real += other.m_real;
         m_imag += other.m_imag;
         return *this;
     }
+    ComplexNumber& operator+=(const double r){
+        m_real += r;
+        return *this;
+    }
     ComplexNumber operator-(const ComplexNumber& other) const{
         return ComplexNumber(m_real-other.m_real,m_imag-other.m_imag);
+    }
+    ComplexNumber operator-(const double r) const{
+        return ComplexNumber(m_real - r, m_imag);
     }
     ComplexNumber& operator-=(const ComplexNumber& other){
         m_real -= other.m_real;
         m_imag -= other.m_imag;
+        return *this;
+    }
+    ComplexNumber& operator-=(const double r){
+        m_real-=r;
         return *this;
     }
     ComplexNumber operator*(const ComplexNumber& other) const{

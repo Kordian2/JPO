@@ -29,4 +29,16 @@ int main(){
     std::cout<<"!= operator: "<<c7<<std::endl;
     c2 = c1;
     std::cout<<"= operator: "<<c2<<" "<<c1<<std::endl;
+
+    ComplexNumber c8(4.0,8.0);
+    double num = 3.0;
+    ComplexNumber c9 = c8 + num;
+    std::cout<<"Double arg for + operator: "<<c9<<std::endl;
+    c9+=num;
+    std::cout<<"Double arg for += operator: "<<c9<<std::endl;
+
+    ComplexNumber c10 = c8 - num;
+    std::cout<<"Double arg for - operator: "<<c10<<std::endl;
+    c10 -= c8;
+    std::cout<<"Double arg for -= operator: "<<c10<<std::endl;
 }
