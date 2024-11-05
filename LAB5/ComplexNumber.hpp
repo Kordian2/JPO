@@ -24,6 +24,7 @@ public:
     ComplexNumber& operator+=(const ComplexNumber& other){
         m_real += other.m_real;
         m_imag += other.m_imag;
+        return *this;
     }
     ComplexNumber operator-(const ComplexNumber& other) const{
         return ComplexNumber(m_real-other.m_real,m_imag-other.m_imag);
@@ -31,13 +32,19 @@ public:
     ComplexNumber& operator-=(const ComplexNumber& other){
         m_real -= other.m_real;
         m_imag -= other.m_imag;
+        return *this;
     }
     ComplexNumber operator*(const ComplexNumber& other) const{
-        return ComplexNumber(m_real*other.m_real, m_imag*other.m_imag);
+        double r = m_real*other.m_real - m_imag*other.m_imag;
+        double i = m_real*other.m_imag + m_imag*other.m_real;
+        return ComplexNumber(r, i);
     }
     ComplexNumber& operator*=(const ComplexNumber& other) {
-        m_real *= other.m_real;
-        m_imag *= other.m_imag;
+        double r = m_real*other.m_real - m_imag*other.m_imag;
+        double i = m_real*other.m_imag + m_imag*other.m_real;
+        m_real = r;
+        m_imag = i;
+        return *this;
     }
     ComplexNumber operator/(const ComplexNumber& other) const{
         double denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
@@ -47,8 +54,11 @@ public:
     }
     ComplexNumber& operator /=(const ComplexNumber& other) {
         double denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
-        m_real = (m_real*other.m_real + m_imag*other.m_imag)/denom;
-        m_imag = (m_imag * other.m_real - m_real * other.m_imag)/denom;
+        double reNum = m_real*other.m_real + m_imag*other.m_imag;
+        double imNum = m_imag * other.m_real - m_real * other.m_imag;
+        m_real = reNum/denom;
+        m_imag = imNum/denom;
+        return *this;
     }
     bool operator==(const ComplexNumber& other) const{
         return (m_real == other.m_real && m_imag == other.m_imag);
@@ -59,6 +69,7 @@ public:
     ComplexNumber& operator=(const ComplexNumber& other) {
         m_real = other.m_real;
         m_imag = other.m_imag;
+        return *this;
     }
     friend std::ostream& operator<<(std::ostream& os, const ComplexNumber& c) {
         os<<c.m_real<<(c.m_imag >= 0 ? "+" : "-")<<std::abs(c.m_imag)<<"i";
