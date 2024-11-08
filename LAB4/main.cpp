@@ -42,6 +42,6 @@ int main(){
     Animal *animal = chooseAnimal(x);
     animal->makeSound();
     delete animal;
-    
+
 
 }

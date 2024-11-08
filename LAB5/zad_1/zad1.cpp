@@ -1,9 +1,5 @@
 #include "ComplexNumber.hpp"
-namespace kb {
-namespace jpo{
-    ComplexNumber;
-}
-}
+
 int main(){
     ComplexNumber c1(2,8);
     ComplexNumber c2(3,4);
