@@ -1,28 +1,32 @@
 #pragma once
 #include <iostream>
+namespace kb{
+    namespace jpo{
 
+template <typename T>
+requires std::is_arithmetic_v<T>
 class ComplexNumber{
 private:
-    double m_real;
-    double m_imag;
+    T m_real;
+    T m_imag;
 public:
-    ComplexNumber(double r = 0, double i = 0) : m_real(r),m_imag(i){};
-    void setReal(double r){
+    ComplexNumber(T r = 0, T i = 0) : m_real(r),m_imag(i){};
+    void setReal(T r){
         m_real = r;
     }
-    double getReal(void) const{
+    T getReal(void) const{
         return m_real;
     }
-    void setImag(double i){
+    void setImag(T i){
         m_imag = i;
     }
-    double getImag(void) const{
+    T getImag(void) const{
         return m_imag;
     }
     ComplexNumber operator+(const ComplexNumber& other) const{
         return ComplexNumber(m_real + other.m_real,m_imag + other.m_imag);
     }
-    ComplexNumber operator+(const double r) const{
+    ComplexNumber operator+(const T r) const{
         return ComplexNumber(m_real + r, m_imag);
     }
     ComplexNumber& operator+=(const ComplexNumber& other){
@@ -30,14 +34,14 @@ public:
         m_imag += other.m_imag;
         return *this;
     }
-    ComplexNumber& operator+=(const double r){
+    ComplexNumber& operator+=(const T r){
         m_real += r;
         return *this;
     }
     ComplexNumber operator-(const ComplexNumber& other) const{
         return ComplexNumber(m_real-other.m_real,m_imag-other.m_imag);
     }
-    ComplexNumber operator-(const double r) const{
+    ComplexNumber operator-(const T r) const{
         return ComplexNumber(m_real - r, m_imag);
     }
     ComplexNumber& operator-=(const ComplexNumber& other){
@@ -45,32 +49,32 @@ public:
         m_imag -= other.m_imag;
         return *this;
     }
-    ComplexNumber& operator-=(const double r){
+    ComplexNumber& operator-=(const T r){
         m_real-=r;
         return *this;
     }
     ComplexNumber operator*(const ComplexNumber& other) const{
-        double r = m_real*other.m_real - m_imag*other.m_imag;
-        double i = m_real*other.m_imag + m_imag*other.m_real;
+        T r = m_real*other.m_real - m_imag*other.m_imag;
+        T i = m_real*other.m_imag + m_imag*other.m_real;
         return ComplexNumber(r, i);
     }
     ComplexNumber& operator*=(const ComplexNumber& other) {
-        double r = m_real*other.m_real - m_imag*other.m_imag;
-        double i = m_real*other.m_imag + m_imag*other.m_real;
+        T r = m_real*other.m_real - m_imag*other.m_imag;
+        T i = m_real*other.m_imag + m_imag*other.m_real;
         m_real = r;
         m_imag = i;
         return *this;
     }
     ComplexNumber operator/(const ComplexNumber& other) const{
-        double denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
-        double reNum = m_real*other.m_real + m_imag*other.m_imag;
-        double imNum = m_imag * other.m_real - m_real * other.m_imag;
+        T denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
+        T reNum = m_real*other.m_real + m_imag*other.m_imag;
+        T imNum = m_imag * other.m_real - m_real * other.m_imag;
         return ComplexNumber(reNum/denom,imNum/denom);
     }
     ComplexNumber& operator /=(const ComplexNumber& other) {
-        double denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
-        double reNum = m_real*other.m_real + m_imag*other.m_imag;
-        double imNum = m_imag * other.m_real - m_real * other.m_imag;
+        T denom = other.m_real*other.m_real + other.m_imag*other.m_imag;
+        T reNum = m_real*other.m_real + m_imag*other.m_imag;
+        T imNum = m_imag * other.m_real - m_real * other.m_imag;
         m_real = reNum/denom;
         m_imag = imNum/denom;
         return *this;
@@ -91,4 +95,7 @@ public:
         return os;
     }
 
+
 };
+    }
+}

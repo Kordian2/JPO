@@ -1,5 +1,7 @@
+#pragma once
 #include <iostream>
-
+namespace kb{
+    namespace jpo{
 class ComplexNumber{
 private:
     double m_real;
@@ -78,7 +80,7 @@ public:
         return (m_real == other.m_real && m_imag == other.m_imag);
     }
     bool operator!=(const ComplexNumber& other) const{
-        return (m_real != other.m_real || m_imag != other.m_imag);
+        return !(*this == other);
     }
     ComplexNumber& operator=(const ComplexNumber& other) {
         m_real = other.m_real;
@@ -91,3 +93,5 @@ public:
     }
 
 };
+    }
+}
